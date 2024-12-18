@@ -11,7 +11,8 @@ import Firebase
 struct TastyHubApp: App {
     init() {
         
-        
+        FirebaseApp.configure()
+
     }
     
     var body: some Scene {

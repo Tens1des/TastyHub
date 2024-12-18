@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30152D272D130ED300E704B4 /* AuthVIew .swift in Sources */ = {isa = PBXBuildFile; fileRef = 30152D262D130ED300E704B4 /* AuthVIew .swift */; };
+		30152D292D130F2500E704B4 /* AuthViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 30152D282D130F2500E704B4 /* AuthViewModel .swift */; };
+		30152D2B2D130FD500E704B4 /* FirebaseAuthServices .swift in Sources */ = {isa = PBXBuildFile; fileRef = 30152D2A2D130FD500E704B4 /* FirebaseAuthServices .swift */; };
 		302FC7822D11B31600C66518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FC7812D11B31600C66518 /* ContentView.swift */; };
 		302FC7862D11B34200C66518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7832D11B34200C66518 /* Assets.xcassets */; };
 		302FC7872D11B34200C66518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7842D11B34200C66518 /* Preview Assets.xcassets */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		30152D242D13091B00E704B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30152D262D130ED300E704B4 /* AuthVIew .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthVIew .swift"; sourceTree = "<group>"; };
+		30152D282D130F2500E704B4 /* AuthViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthViewModel .swift"; sourceTree = "<group>"; };
+		30152D2A2D130FD500E704B4 /* FirebaseAuthServices .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthServices .swift"; sourceTree = "<group>"; };
 		302FC7812D11B31600C66518 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TastyHub/ContentView.swift; sourceTree = "<group>"; };
 		302FC7832D11B34200C66518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302FC7842D11B34200C66518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -87,15 +93,17 @@
 		302FC78A2D11B3C800C66518 /* ViewModel  */ = {
 			isa = PBXGroup;
 			children = (
+				30152D282D130F2500E704B4 /* AuthViewModel .swift */,
 			);
 			name = "ViewModel ";
 			sourceTree = "<group>";
 		};
-		302FC78B2D11B47700C66518 /* Persistence  */ = {
+		302FC78B2D11B47700C66518 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				30152D2A2D130FD500E704B4 /* FirebaseAuthServices .swift */,
 			);
-			name = "Persistence ";
+			name = Services;
 			sourceTree = "<group>";
 		};
 		302FC78C2D11B53E00C66518 /* MoreFiles  */ = {
@@ -109,6 +117,7 @@
 		302FC78F2D11B65B00C66518 /* Auth  */ = {
 			isa = PBXGroup;
 			children = (
+				30152D262D130ED300E704B4 /* AuthVIew .swift */,
 			);
 			path = "Auth ";
 			sourceTree = "<group>";
@@ -129,7 +138,7 @@
 				302FC7882D11B35900C66518 /* Views */,
 				302FC7892D11B37400C66518 /* Model  */,
 				302FC78A2D11B3C800C66518 /* ViewModel  */,
-				302FC78B2D11B47700C66518 /* Persistence  */,
+				302FC78B2D11B47700C66518 /* Services */,
 				302FC7852D11B34200C66518 /* Preview Content */,
 				302FC78C2D11B53E00C66518 /* MoreFiles  */,
 				30D9A62F2D08E5CF00D3AA28 /* Products */,
@@ -227,7 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				302FC7822D11B31600C66518 /* ContentView.swift in Sources */,
+				30152D292D130F2500E704B4 /* AuthViewModel .swift in Sources */,
+				30152D2B2D130FD500E704B4 /* FirebaseAuthServices .swift in Sources */,
 				30D9A6322D08E5CF00D3AA28 /* TastyHubApp.swift in Sources */,
+				30152D272D130ED300E704B4 /* AuthVIew .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
