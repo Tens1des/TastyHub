@@ -10,7 +10,6 @@
 		302FC7822D11B31600C66518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FC7812D11B31600C66518 /* ContentView.swift */; };
 		302FC7862D11B34200C66518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7832D11B34200C66518 /* Assets.xcassets */; };
 		302FC7872D11B34200C66518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7842D11B34200C66518 /* Preview Assets.xcassets */; };
-		302FC78E2D11B56000C66518 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302FC78D2D11B56000C66518 /* Info.plist */; };
 		30701E602D11A38D001595F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E5F2D11A38D001595F6 /* FirebaseAnalytics */; };
 		30701E622D11A38D001595F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E612D11A38D001595F6 /* FirebaseAuth */; };
 		30701E642D11A38D001595F6 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E632D11A38D001595F6 /* FirebaseCore */; };
@@ -34,10 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		30152D242D13091B00E704B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302FC7812D11B31600C66518 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TastyHub/ContentView.swift; sourceTree = "<group>"; };
 		302FC7832D11B34200C66518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302FC7842D11B34200C66518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		302FC78D2D11B56000C66518 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TastyHub/Info.plist; sourceTree = "<group>"; };
 		30CC0D822D09D5D40027BCAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D9A62E2D08E5CF00D3AA28 /* TastyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9A6312D08E5CF00D3AA28 /* TastyHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyHubApp.swift; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				30CC0D822D09D5D40027BCAF /* GoogleService-Info.plist */,
-				302FC78D2D11B56000C66518 /* Info.plist */,
 			);
 			name = "MoreFiles ";
 			sourceTree = "<group>";
@@ -126,6 +124,7 @@
 		30D9A6252D08E5CF00D3AA28 = {
 			isa = PBXGroup;
 			children = (
+				30152D242D13091B00E704B4 /* Info.plist */,
 				30701E692D11B22D001595F6 /* SupportingFiles  */,
 				302FC7882D11B35900C66518 /* Views */,
 				302FC7892D11B37400C66518 /* Model  */,
@@ -214,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				302FC78E2D11B56000C66518 /* Info.plist in Resources */,
 				302FC7862D11B34200C66518 /* Assets.xcassets in Resources */,
 				302FC7872D11B34200C66518 /* Preview Assets.xcassets in Resources */,
 				30CC0D832D09D5D40027BCAF /* GoogleService-Info.plist in Resources */,
