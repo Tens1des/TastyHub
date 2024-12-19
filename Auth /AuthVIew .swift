@@ -8,65 +8,101 @@
 import SwiftUI
 
 struct AuthView: View {
-    @StateObject private var viewModel = AuthViewModel()  // Инициализация ViewModel
-    @State private var email: String = ""  // Состояние для хранения email
-    @State private var password: String = ""  // Состояние для хранения пароля
-    @State private var isSignUp = false  // Переключатель между регистрацией и входом
+    @StateObject private var viewModel = AuthViewModel()
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var isSignUp = false
 
     var body: some View {
-        VStack {
-            Text(isSignUp ? "Регистрация" : "Вход")
-                .font(.largeTitle)
-                .padding()
-
-            // Email TextField
-            TextField("Email", text: $email)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            // Password SecureField
-            SecureField("Пароль", text: $password)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            // Показать сообщение об ошибке
-            if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
-            }
-
-            // Кнопка для входа или регистрации
-            Button(action: {
-                if isSignUp {
-                    viewModel.signUp(email: email, password: password)
-                } else {
-                    viewModel.signIn(email: email, password: password)
+        NavigationView {
+            VStack {
+                if viewModel.isSignedIn {
+                    NavigationLink(destination: MainView(), isActive: $viewModel.isSignedIn) {
+                        EmptyView()
+                    }
                 }
-            }) {
-                Text(isSignUp ? "Зарегистрироваться" : "Войти")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            }
+                
+                Text("Welcome")
+                    .font(.largeTitle)
+                    .offset(y: -60)
+                
+                VStack (alignment: .leading, spacing: 8){
+                    Text(isSignUp ? "Create your Account" : "Login to your Account")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity , alignment: .leading)
+                        .offset(x:20)
+    
+                    
+                    Text("Email")
+                        .font(.caption) // Меньший шрифт для описания
+                        .foregroundColor(.black)
+                        .offset(x: 20 , y: 20)
+                    
+                    
+                    TextField("Email", text: $email)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    Text("Password")
+                        .font(.caption)
+                        .foregroundColor(.black)
+                        .offset(x:20 , y:-3)
+                    
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .offset(y: -23)
+                        
+                }
+                
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                }
 
-            // Переключатель между входом и регистрацией
-            Button(action: {
-                isSignUp.toggle()
-            }) {
-                Text(isSignUp ? "Уже есть аккаунт? Войти" : "Нет аккаунта? Зарегистрироваться")
-                    .foregroundColor(.blue)
-            }
+                Button(action: {
+                    if isSignUp {
+                        viewModel.signUp(email: email, password: password)
+                    } else {
+                        viewModel.signIn(email: email, password: password)
+                    }
+                }) {
+                    Text(isSignUp ? "Sign Up" : "Log In")
+                        .frame(maxWidth: 300 , alignment: .center)
+                        
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(25)
+                        .offset(y: -25)
+                        
+                        
+                }
 
-            // Переход на главный экран после успешной авторизации
-            if viewModel.isAuthenticated {
-                Text("Добро пожаловать, \(email)!")
-                    .padding()
-                // Здесь можно добавить переход на главный экран
+                HStack {
+                    
+                    Text(isSignUp ? "Already have an Account ?" : "Don't have an account ?")
+                        .foregroundColor(.black)
+                    
+                    
+                    Button(action: {
+                        isSignUp.toggle()
+                    }) {
+                        Text(isSignUp ? "Log In" : "Sign Up")
+                            .foregroundColor(.mint)
+                    }
+                }.offset(y: 160)
             }
+            .padding()
         }
-        .padding()
+    }
+}
+
+struct MainView: View {
+    var body: some View {
+        Text("Главный экран")
+            .font(.largeTitle)
     }
 }
 
