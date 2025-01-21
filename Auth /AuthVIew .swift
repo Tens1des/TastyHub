@@ -17,7 +17,7 @@ struct AuthView: View {
         NavigationView {
             VStack {
                 if viewModel.isSignedIn {
-                    NavigationLink(destination: MainView(), isActive: $viewModel.isSignedIn) {
+                    NavigationLink(destination: RecipeListView(), isActive: $viewModel.isSignedIn) {
                         EmptyView()
                     }
                 }
@@ -39,7 +39,7 @@ struct AuthView: View {
                         .offset(x: 20 , y: 20)
                     
                     
-                    TextField("Email", text: $email)
+                    TextField("Email...", text: $email)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
@@ -48,7 +48,7 @@ struct AuthView: View {
                         .foregroundColor(.black)
                         .offset(x:20 , y:-3)
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password...", text: $password)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .offset(y: -23)
@@ -99,12 +99,12 @@ struct AuthView: View {
     }
 }
 
-struct MainView: View {
+/*struct MainView: View {
     var body: some View {
         Text("Главный экран")
             .font(.largeTitle)
     }
-}
+}*/
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
