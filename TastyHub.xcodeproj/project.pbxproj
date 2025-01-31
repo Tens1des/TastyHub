@@ -13,10 +13,10 @@
 		302FC7822D11B31600C66518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FC7812D11B31600C66518 /* ContentView.swift */; };
 		302FC7862D11B34200C66518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7832D11B34200C66518 /* Assets.xcassets */; };
 		302FC7872D11B34200C66518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302FC7842D11B34200C66518 /* Preview Assets.xcassets */; };
+		305345F82D4D12FE0083E294 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305345F72D4D12FE0083E294 /* RecipeListView.swift */; };
 		3067734B2D371A2A00F5487A /* RecipeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067734A2D371A2A00F5487A /* RecipeModels.swift */; };
 		3067734D2D371ABF00F5487A /* RecipeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067734C2D371ABF00F5487A /* RecipeAPIService.swift */; };
 		3067734F2D371EF000F5487A /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067734E2D371EF000F5487A /* RecipeListViewModel.swift */; };
-		306773532D37204B00F5487A /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306773522D37204B00F5487A /* RecipeListView.swift */; };
 		30701E602D11A38D001595F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E5F2D11A38D001595F6 /* FirebaseAnalytics */; };
 		30701E622D11A38D001595F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E612D11A38D001595F6 /* FirebaseAuth */; };
 		30701E642D11A38D001595F6 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E632D11A38D001595F6 /* FirebaseCore */; };
@@ -47,10 +47,10 @@
 		302FC7812D11B31600C66518 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TastyHub/ContentView.swift; sourceTree = "<group>"; };
 		302FC7832D11B34200C66518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302FC7842D11B34200C66518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		305345F72D4D12FE0083E294 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		3067734A2D371A2A00F5487A /* RecipeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModels.swift; sourceTree = "<group>"; };
 		3067734C2D371ABF00F5487A /* RecipeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIService.swift; sourceTree = "<group>"; };
 		3067734E2D371EF000F5487A /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
-		306773522D37204B00F5487A /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		30CC0D822D09D5D40027BCAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D9A62E2D08E5CF00D3AA28 /* TastyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9A6312D08E5CF00D3AA28 /* TastyHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyHubApp.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				302FC7812D11B31600C66518 /* ContentView.swift */,
-				306773522D37204B00F5487A /* RecipeListView.swift */,
+				305345F72D4D12FE0083E294 /* RecipeListView.swift */,
 				302FC78F2D11B65B00C66518 /* Auth  */,
 			);
 			name = Views;
@@ -253,7 +253,7 @@
 				3067734B2D371A2A00F5487A /* RecipeModels.swift in Sources */,
 				3067734F2D371EF000F5487A /* RecipeListViewModel.swift in Sources */,
 				30D9A6322D08E5CF00D3AA28 /* TastyHubApp.swift in Sources */,
-				306773532D37204B00F5487A /* RecipeListView.swift in Sources */,
+				305345F82D4D12FE0083E294 /* RecipeListView.swift in Sources */,
 				3067734D2D371ABF00F5487A /* RecipeAPIService.swift in Sources */,
 				30152D272D130ED300E704B4 /* AuthVIew .swift in Sources */,
 			);

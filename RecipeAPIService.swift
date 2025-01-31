@@ -43,7 +43,7 @@ class SpoonacularAPIService {
     }
 }
 
-// Модель ответа от API
+
 struct RecipeSearchResponse: Codable {
     let results: [Recipe]
 }

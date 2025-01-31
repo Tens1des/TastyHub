@@ -18,6 +18,11 @@ struct AuthView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                if viewModel.isSignedIn {
+                                   NavigationLink(destination: RecipeListView(), isActive: $viewModel.isSignedIn) {
+                                       EmptyView()
+                                   }
+                               }
                 
                 LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.green.opacity(0.5)]),
                                startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -127,6 +132,7 @@ struct CustomTextField: View {
         .foregroundColor(.white)
     }
 }
+
 
 
 struct AuthView_Previews: PreviewProvider {
