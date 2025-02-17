@@ -20,7 +20,7 @@ struct AuthView: View {
             ZStack {
                 if viewModel.isSignedIn {
                                    NavigationLink(destination: RecipeListView(), isActive: $viewModel.isSignedIn) {
-                                       EmptyView()
+                                       RecipeListView()
                                    }
                                }
                 

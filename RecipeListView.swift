@@ -9,129 +9,83 @@ import SwiftUI
 
 
 struct RecipeListView: View {
-    @StateObject private var viewModel = RecipeListViewModel()
-    @State private var searchText = ""
-    @State private var selectedCategory: String? = nil
-
-    let categories = ["Все", "Завтрак", "Обед", "Ужин"]
+    @ObservedObject var viewModel = RecipeListViewModel()
 
     var body: some View {
         NavigationView {
-            VStack {
-                // Поле поиска
-                TextField("Искать рецепты...", text: $searchText)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-
-                // Секция с категориями
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(categories, id: \.self) { category in
-                            Button(action: {
-                                selectedCategory = category == "Все" ? nil : category
-                            }) {
-                                Text(category)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal, 20)
-                                    .background(selectedCategory == category ? Color.blue : Color.gray.opacity(0.2))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15)
-                                    .animation(.spring(), value: selectedCategory)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
+            List(viewModel.recipes) { recipe in
+                NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                    RecipeCardView(recipe: recipe)
                 }
-
-                // Ошибки
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-
-                // Список рецептов
-                ScrollView {
-                    LazyVStack {
-                        ForEach(filteredRecipes) { recipe in
-                            RecipeCard(recipe: recipe)
-                                .padding(.horizontal)
-                                .padding(.top, 10)
-                        }
-                    }
-                }
-
-                // Кнопка добавления рецепта
-                Button(action: {
-                    print("Добавить новый рецепт")
-                }) {
-                    Text("Добавить рецепт")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.green)
-                        .cornerRadius(25)
-                        .padding(.horizontal)
-                        .shadow(radius: 5)
-                }
-                .padding(.bottom)
             }
             .onAppear {
-                viewModel.loadRecipes()
+                viewModel.loadPopularRecipes()  
             }
-            .navigationTitle("Рецепты")
-        }
-    }
-
-    // Фильтрация рецептов по категории и поиску
-    private var filteredRecipes: [Recipe] {
-        viewModel.recipes.filter { recipe in
-            let matchesSearchText = searchText.isEmpty || recipe.title.localizedCaseInsensitiveContains(searchText)
-            let matchesCategory = selectedCategory == nil || recipe.category == selectedCategory
-            return matchesSearchText && matchesCategory
+            .navigationTitle("Популярные рецепты")
         }
     }
 }
 
-struct RecipeCard: View {
+struct RecipeCardView: View {
     var recipe: Recipe
-    
+
     var body: some View {
-        VStack(alignment: .leading) {
-            // Картинка рецепта
+        VStack {
             AsyncImage(url: URL(string: recipe.image)) { phase in
                 if let image = phase.image {
-                    image.resizable()
-                        .scaledToFill()
-                        .frame(height: 200)
-                        .cornerRadius(15)
-                        .clipped()
+                    image.resizable().scaledToFit().frame(height: 150)
                 } else if phase.error != nil {
-                    Color.red.frame(height: 200).cornerRadius(15)
+                    Color.red.frame(height: 150)
                 } else {
-                    ProgressView().frame(height: 200)
+                    ProgressView().frame(height: 150)
                 }
             }
-
-            // Информация о рецепте
-            VStack(alignment: .leading, spacing: 5) {
-                Text(recipe.title)
-                    .font(.headline)
-                    .lineLimit(2)
-
-                Text("Время: \(recipe.preparationTime) минут")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
-            .padding(.vertical, 10)
+            Text(recipe.title)
+                .font(.headline)
+                .multilineTextAlignment(.center)
+                .padding([.top, .horizontal])
+            Text(recipe.description ?? "Нет описания")
+                .font(.subheadline)
+                .foregroundColor(.gray)
+                .padding([.horizontal, .bottom])
         }
         .background(Color.white)
-        .cornerRadius(15)
+        .cornerRadius(10)
         .shadow(radius: 5)
     }
 }
 
+struct RecipeDetailView: View {
+    var recipe: Recipe
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            AsyncImage(url: URL(string: recipe.image)) { phase in
+                if let image = phase.image {
+                    image.resizable().scaledToFit().frame(height: 250)
+                } else if phase.error != nil {
+                    Color.red.frame(height: 250)
+                } else {
+                    ProgressView().frame(height: 250)
+                }
+            }
+            
+            Text(recipe.title)
+                .font(.title)
+                .padding()
+            
+            Text("Ингредиенты:")
+                .font(.headline)
+                .padding(.horizontal)
+            
+            ForEach(recipe.ingredients, id: \.self) { ingredient in
+                Text(ingredient)
+                    .padding(.horizontal)
+            }
+            
+            Spacer()
+        }
+        .navigationTitle(recipe.title)
+    }
+    
+}

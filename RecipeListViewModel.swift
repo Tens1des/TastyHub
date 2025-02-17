@@ -9,9 +9,9 @@ import SwiftUI
 
 class RecipeListViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
-    @Published var errorMessage: String? = nil 
+    @Published var errorMessage: String? = nil
 
-    func loadRecipes() {
+    func loadPopularRecipes() {
         SpoonacularAPIService.shared.searchRecipes(query: "pasta") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
