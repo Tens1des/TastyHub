@@ -25,7 +25,7 @@ struct RecipeCardItemView: View {
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding([.top, .horizontal])
-            Text(recipe.description ?? "Нет описания")
+            Text(recipe.instructions ?? "Нет описания")
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .padding([.horizontal, .bottom])

@@ -19,7 +19,7 @@ struct RecipeListView: View {
                 }
             }
             .onAppear {
-                viewModel.loadPopularRecipes()  
+                viewModel.loadRandomRecipes()
             }
             .navigationTitle("Популярные рецепты")
         }
@@ -44,7 +44,7 @@ struct RecipeCardView: View {
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding([.top, .horizontal])
-            Text(recipe.description ?? "Нет описания")
+            Text(recipe.instructions)
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .padding([.horizontal, .bottom])
@@ -54,6 +54,8 @@ struct RecipeCardView: View {
         .shadow(radius: 5)
     }
 }
+
+//extension Ingredient: Hashable {} 
 
 struct RecipeDetailView: View {
     var recipe: Recipe
@@ -78,8 +80,9 @@ struct RecipeDetailView: View {
                 .font(.headline)
                 .padding(.horizontal)
             
-            ForEach(recipe.ingredients, id: \.self) { ingredient in
-                Text(ingredient)
+           
+            ForEach(recipe.extendedIngredients, id: \.self) { ingredient in
+                Text(ingredient.name)
                     .padding(.horizontal)
             }
             
@@ -87,5 +90,4 @@ struct RecipeDetailView: View {
         }
         .navigationTitle(recipe.title)
     }
-    
 }

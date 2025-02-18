@@ -7,21 +7,22 @@
 
 import SwiftUI
 
+
 class RecipeListViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
-    @Published var errorMessage: String? = nil
 
-    func loadPopularRecipes() {
-        SpoonacularAPIService.shared.searchRecipes(query: "pasta") { [weak self] result in
+    func loadRandomRecipes() {
+        SpoonacularAPIService.shared.fetchRandomRecipes { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let recipes):
-                    self?.recipes = recipes
+                    self.recipes = recipes
                 case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
+                    print("❌ Ошибка загрузки случайных рецептов: \(error.localizedDescription)")
                 }
             }
         }
     }
 }
+
 
