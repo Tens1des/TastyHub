@@ -24,6 +24,9 @@
 		30701E642D11A38D001595F6 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E632D11A38D001595F6 /* FirebaseCore */; };
 		30701E662D11A38D001595F6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E652D11A38D001595F6 /* FirebaseFirestore */; };
 		30701E682D11A38D001595F6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 30701E672D11A38D001595F6 /* FirebaseStorage */; };
+		3076903F2D67849B0026BC24 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076903E2D67849B0026BC24 /* MainTabView.swift */; };
+		307690412D6785850026BC24 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307690402D6785850026BC24 /* FavoritesView.swift */; };
+		307690432D6785B00026BC24 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307690422D6785B00026BC24 /* SettingsView.swift */; };
 		30CC0D832D09D5D40027BCAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30CC0D822D09D5D40027BCAF /* GoogleService-Info.plist */; };
 		30D9A6322D08E5CF00D3AA28 /* TastyHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9A6312D08E5CF00D3AA28 /* TastyHubApp.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,9 @@
 		3067734A2D371A2A00F5487A /* RecipeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModels.swift; sourceTree = "<group>"; };
 		3067734C2D371ABF00F5487A /* RecipeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIService.swift; sourceTree = "<group>"; };
 		3067734E2D371EF000F5487A /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		3076903E2D67849B0026BC24 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		307690402D6785850026BC24 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		307690422D6785B00026BC24 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		30CC0D822D09D5D40027BCAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D9A62E2D08E5CF00D3AA28 /* TastyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9A6312D08E5CF00D3AA28 /* TastyHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyHubApp.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				305345F72D4D12FE0083E294 /* RecipeListView.swift */,
 				30475AEB2D633D2000E28D23 /* RecipeCardView .swift */,
 				30475AED2D633D4000E28D23 /* RecipeDetailView.swift */,
+				3076903E2D67849B0026BC24 /* MainTabView.swift */,
+				307690402D6785850026BC24 /* FavoritesView.swift */,
+				307690422D6785B00026BC24 /* SettingsView.swift */,
 				302FC78F2D11B65B00C66518 /* Auth  */,
 			);
 			name = Views;
@@ -255,15 +264,18 @@
 			files = (
 				302FC7822D11B31600C66518 /* ContentView.swift in Sources */,
 				30152D292D130F2500E704B4 /* AuthViewModel .swift in Sources */,
+				307690412D6785850026BC24 /* FavoritesView.swift in Sources */,
 				30152D2B2D130FD500E704B4 /* FirebaseAuthServices .swift in Sources */,
 				3067734B2D371A2A00F5487A /* RecipeModels.swift in Sources */,
 				3067734F2D371EF000F5487A /* RecipeListViewModel.swift in Sources */,
 				30D9A6322D08E5CF00D3AA28 /* TastyHubApp.swift in Sources */,
+				307690432D6785B00026BC24 /* SettingsView.swift in Sources */,
 				305345F82D4D12FE0083E294 /* RecipeListView.swift in Sources */,
 				30475AEE2D633D4000E28D23 /* RecipeDetailView.swift in Sources */,
 				30475AEC2D633D2000E28D23 /* RecipeCardView .swift in Sources */,
 				3067734D2D371ABF00F5487A /* RecipeAPIService.swift in Sources */,
 				30152D272D130ED300E704B4 /* AuthVIew .swift in Sources */,
+				3076903F2D67849B0026BC24 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

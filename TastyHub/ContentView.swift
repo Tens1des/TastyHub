@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ContentView: View {
+    @State private var isAuthenticated = false // Состояние входа
+
     var body: some View {
-        
-        AuthView()
+        if isAuthenticated {
+            MainTabView() // После входа показывается главный экран с вкладками
+        } else {
+            AuthView(onLoginSuccess: {
+                isAuthenticated = true // Устанавливаем, что пользователь вошел
+            })
+        }
     }
 }
 
@@ -19,3 +28,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
